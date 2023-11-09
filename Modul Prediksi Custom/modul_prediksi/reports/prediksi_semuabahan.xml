@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="semuabahan_template">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <style>
+                    td, th {
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        padding-top: 1px;
+                        padding-bottom: 1px;
+                    }
+                </style>
+                <div class="page" style="font-family:Times New Roman;">
+                    <div style="margin-top: 10px; margin-left: 50px; margin-right: 50px; font-size: 12px;">
+                        <header>
+                            <div style="text-align:left;">
+                                <p style="font-size: 19px;">
+                                    <span><b>UMKM Permak dan Jahit Hafizh</b></span>
+                                </p>
+                                <p style="margin-top: -15px; ">
+                                    <span style="font-size:12px;">Sendangguwo RT15/RW01 Kec. Tembalang, Kota Semarang</span>
+                                </p>
+                                <hr size="2" width="100%" color="black"></hr>
+                            </div>
+
+                            <div style="text-align:center;">
+                                <p>
+                                    <span style="font-size:19px;"><b>Laporan Prediksi Penggunaan Bahan Bulan Depan</b></span>
+                                </p>
+                            </div>
+                        </header>
+
+                        <div class="row" style="margin-top:30px;">
+<!--                            <div class="col-12">-->
+                            <table width="100%">
+                                <thead style="vertical-align : middle;text-align:center;">
+                                    <tr style="text-align:left; background-color: #dddddd; vertical-align : middle;">
+                                        <th style="border:1px solid black;font-weight:bold;width:10%; text-align:center;">
+                                            Bulan
+                                        </th>
+                                        <th style="border:1px solid black;font-weight:bold;width:10%; text-align:center;">
+                                            Tahun
+                                        </th>
+                                        <th style="border:1px solid black;font-weight:bold;width:20%; text-align:left;">
+                                            Bahan Baku
+                                        </th>
+                                        <th style="border:1px solid black;font-weight:bold;width:15%; text-align:center;">
+                                            Qty Prediksi
+                                        </th>
+                                        <th style="border:1px solid black;font-weight:bold;width:5%; text-align:center;">
+                                            UoM
+                                        </th>
+                                        <th style="border:1px solid black;font-weight:bold;width:15%; text-align:center;">
+                                            MAPE (%)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="docs" t-as="docs">
+                                        <td style="border:1px solid black;text-align: center;">
+                                            <span t-esc="docs.get('bulan')"/>
+                                        </td>
+                                        <td style="border:1px solid black;text-align: center;">
+                                            <span t-esc="docs.get('tahun')"/>
+                                        </td>
+                                        <td style="border:1px solid black;text-align: left;">
+                                            <span t-esc="docs.get('bahan_baku')"/>
+                                        </td>
+                                        <td style="border:1px solid black;text-align: center;">
+                                            <span t-esc="docs.get('qty')"/>
+                                        </td>
+                                        <td style="border:1px solid black;text-align: center;">
+                                            <span t-esc="docs.get('uom')"/>
+                                        </td>
+                                        <td style="border:1px solid black;text-align: center;">
+                                            <span t-esc="round(docs.get('mape'),0)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

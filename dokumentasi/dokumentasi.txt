@@ -1,0 +1,10 @@
+postgresql
+user : odoo_kp
+pass : openpgpwd
+
+database
+master pass : openpgpwd
+db_name : db_modul_prediksi
+
+user_name : admin
+pass : admin
